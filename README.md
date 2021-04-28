@@ -1,1 +1,7 @@
 # Alumni-Management-System
+
+The Alumni Management system is a web based which provides a user- friendly, interactive Graphical User Interface (GUI) PHP, HTML and CSS, ALL data is stored MySQL database. This web application will facilitate effective communication and exposure to the alumni by providing them with a platform to talk about their achievement and also reconnect with old friends. This application will be providing direct contact between the alumni. This application also aims at keeping the alumni updated with current events organized by the college as well as the other alumni.
+
+The alumni management system can be accessed by any user. The alumni records are maintained in a database using MySQL which can be queried and retrieved through the front-end tool by any user who has successfully registered with the application. The application also allows the alumni to create and talk about their achievements.
+
+The web application can be adapted by any educational institution to keep their alumni connected. The project is aimed at providing the alumni with a platform to stay connected with their institution as well as their friends. It also provides the alumni with a platform to be informed about the ongoing events. The alumni management system will also provide the alumni with a platform to talk about their achievements. The main motivation behind the selection of this project was to implement something which will be user-friendly and challenging to design and develop in PHP and HTML.
