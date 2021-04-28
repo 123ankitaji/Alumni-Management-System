@@ -1,0 +1,112 @@
+DROP TABLE IF EXISTS `Alumni_personalinfo`;
+create table Alumni_personalinfo(
+fname varchar(30),
+lname varchar(30),
+birthdate date,
+gender char,
+phno varchar(10),
+address varchar(30),
+usn varchar(10),
+branch varchar(10),
+email varchar(30),
+primary key(usn));
+
+DROP TABLE IF EXISTS `Alumni_company`;
+create table Alumni_company(
+usn varchar(10),
+company_name varchar(10),
+passoutyear integer(4),
+company_joining integer(4),
+branch varchar(30),
+package varchar(10),
+primary key(usn),
+foreign key(usn) references Alumni_personalinfo(usn) on delete cascade);
+
+create table Alumni_branch(
+branch varchar(10),
+branch_id varchar(10),
+primary key(branch);
+
+DROP TABLE IF EXISTS `Alumni_academicinfo`;
+create table Alumni_academicinfo(
+usn varchar(10),
+joinyear integer(4),
+passoutyear integer(4),
+profession varchar(30),
+primary key(usn),
+foreign key(usn) references Alumni_personalinfo(usn) on delete cascade);
+
+DROP TABLE IF EXISTS `events`;
+create table events(
+usn varchar(10),
+eventid integer AUTO_INCREMENT,
+eventname varchar(30),
+eventtime varchar(5),
+venue varchar(30),
+eventdate date,
+primary key(eventid),
+foreign key(usn) references alumni_personalinfo(usn));
+
+create table achievements(
+usn varchar(10),
+achievements varchar(200),
+primary key(usn,achievements),
+foreign key(usn) references Alumni_personalinfo(usn) on delete cascade);
+
+
+insert into Alumni_personalinfo values('Ankita','s','1997-04-17','F',953894839,'Bangalore','1rn17is015','ank@gmail.com','Ank','hello');
+
+insert into 'Alumni_branch' ('branch','branch_id') values (('Computer Science and Engineering','CSE'),
+('Information Science and Engineering','ISE'),
+('Electronics and Communication','EC'),
+('Civil Engineering','CIVIL'),
+('IIT Technology','IIT'),
+('Mechanical Engineering ','MECH'),
+);
+
+insert into 'Alumni_personalinfo' values('fname','lname','birthdate','gender','phno','address','usn','branch','email') values (('Amit','Shah','12-09-1999','male',9988776600,'Kundanhalli','1RN17IS004','ISE','amit@gmail.com'),
+('Arun','Shandar','15-05-1999','male',9982276600,'AECS','1RN17IS005','EC','arun@gmail.com'),
+('Leena','Singh','22-02-1998','female',9988767898,'BTM','1RN17IS006','CSE','leena@gmail.com'),
+('Soumya','Shinde','13-09-2000','female',8888776600,'Rajkot','1RN17IS007','IIT','soumya@gmail.com'),
+('Nina','Dobrev','05-11-1999','female',9900006600,'BTM','1RN17IS008','ISE','nina@gmail.com'),
+('Rakshith','SG','12-12-1999','male',8000776600,'Hasan','1RN17IS009','CIVIL','rakshith@gmail.com'));
+
+insert into 'Alumni_company' values('usn','company_name','passoutyear','company_joining','branch','package') values('1RN17IS004','Accenture',2021,2021,'ISE','3.5LPA'),
+values('1RN17IS005','MATH',2021,2021,'EC','5LPA'),
+values('1RN17IS006','NTT',2021,2021,'CSE','4LPA'),
+values('1RN17IS007','MATH',2021,2021,'IIT','3.5LPA'),
+values('1RN17IS008','Accenture',2021,2021,'ISE','6.5LPA'),
+values('1RN17IS009','MindTree',2021,2021,'CIVIL','3.5LPA'));
+
+insert into 'Alumni_academicinfo' values('usn','joinyear','passoutyear','profession') 
+values('1RN17IS004',2016,2021,'Developer'),
+values('1RN17IS005',2017,2021,'Software Developer'),
+values('1RN17IS006',2015,2021,'Software Testing'),
+values('1RN17IS007',2016,2021,'Sales'),
+values('1RN17IS008',2017,2021,'Developer')
+values('1RN17IS009',2015,2021,'Testing Developer'),);
+
+insert into 'events' values('usn','eventid','eventname','eventtime','venue','eventdate') values('1RN17IS004',2134,'hackathon','9am','auditoriam','2021-11-09'),
+values('1RN17IS005',2135,'big data','10am','stadium','2021-12-09'),
+values('1RN17IS006',2034,'hackathon','11am','auditoriam','2021-21-09'),
+values('1RN17IS007',1134,'chairman','12am','stage','2021-13-09'),
+values('1RN17IS008',2104,'teacher','1pm','stadium','2021-21-09'),
+values('1RN17IS009',2004,'project manager','3pm','stage','2021-11-09'));
+
+insert into 'achievements' values('usn','achievements') values('1RN17IS004','orientation'),
+values('1RN17IS004','sports'),
+values('1RN17IS005','hackathon'),
+values('1RN17IS006','essay'),
+values('1RN17IS007','representation'),
+values('1RN17IS008','sports'));
+
+
+
+
+
+
+
+
+
+
+
